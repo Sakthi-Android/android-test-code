@@ -12,18 +12,18 @@ import kotlinx.coroutines.launch
 class QuoteViewModel : ViewModel() {
     private val repository = QuotesRepository()
 
-    val _quotesCards = MutableLiveData(listOf<Quotes>())
+    val quotesCardsLiveData = MutableLiveData(listOf<Quotes>())
 
-    val quotesCards: LiveData<List<Quotes>> = _quotesCards
+    val quotesCards: LiveData<List<Quotes>> = quotesCardsLiveData
 
     fun fetchQuotes() {
         viewModelScope.launch {
             try {
                 val quotes = repository.getQuotes()
-                _quotesCards.value = listOf(quotes)
+                quotesCardsLiveData.value = listOf(quotes)
             } catch (e: Exception) {
                 // Handle error
-                Log.e("Error",e.message.toString())
+                Log.e("Error", e.message.toString())
             }
         }
     }

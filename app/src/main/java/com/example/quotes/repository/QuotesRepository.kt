@@ -6,7 +6,7 @@ import com.example.quotes.service.RetrofitInstance
 class QuotesRepository {
     private val quotesService = RetrofitInstance.quotesDataService
 
-    suspend fun getQuotes(): Quotes{
+    suspend fun getQuotes(): Quotes {
         return quotesService.getQuotesData()
     }
 }

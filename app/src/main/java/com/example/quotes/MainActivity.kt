@@ -30,7 +30,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             HTTPStatusDogsTheme {
-                // A surface container using the 'background' color from the theme
                 Column {
                     TopAppBar(
                         modifier = Modifier.background(Color.White),

@@ -9,6 +9,6 @@ class QuoteViewModelTest {
     @Test
     fun `when loadData() is called, should load data`() {
         viewModel.fetchQuotes()
-        assert(viewModel._quotesCards.value.isNullOrEmpty())
+        assert(viewModel.quotesCardsLiveData.value.isNullOrEmpty())
     }
 }

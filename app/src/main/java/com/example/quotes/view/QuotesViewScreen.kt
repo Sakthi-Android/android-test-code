@@ -31,13 +31,13 @@ fun QuotesViewScreen(viewModel: QuoteViewModel) {
 
     Column {
         if (quotesData == null) {
-            // Show loading indicator or placeholder
-            Text(text = "Loading...",)
+            Text(text = "Loading...")
         } else {
             QuotesDataItem(viewModel)
         }
     }
 }
+
 @SuppressLint("StateFlowValueCalledInComposition")
 @Composable
 fun QuotesDataItem(viewModel: QuoteViewModel) {
@@ -46,10 +46,10 @@ fun QuotesDataItem(viewModel: QuoteViewModel) {
     viewModel.quotesCards.value?.forEach {
         listData.add(it.results)
     }
-    listData.forEach{ it ->
-        it.forEach { data->
+    listData.forEach { it ->
+        it.forEach { data ->
             result.add(data)
-            Log.e("data",data.toString())
+            Log.e("data", data.toString())
         }
 
     }

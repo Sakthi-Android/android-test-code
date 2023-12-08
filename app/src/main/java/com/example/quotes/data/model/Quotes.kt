@@ -9,6 +9,7 @@ data class Quotes(
     val totalCount: Int,
     val totalPages: Int,
 )
+
 data class Result(
     val _id: String,
     val author: String,
